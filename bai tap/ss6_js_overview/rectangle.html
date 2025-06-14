@@ -6,14 +6,14 @@
 </head>
 <body>
 <h1>Tính chu vi và diện tích hình chữ nhật</h1>
-<input id="chieuRong" oninput="input()" placeholder="Nhập chiều rộng của hình chữ nhật">
-<input id="chieuDai" oninput="input()" placeholder="Nhập chiều dài của hình chữ nhật">
-<button onclick="input()">calculate</button>
+<input style="width:210px" id="chieuRong" oninput="inputt()" placeholder="Nhập chiều rộng của hình chữ nhật"><br>
+<input style="width:210px" id="chieuDai" oninput="inputt()" placeholder="Nhập chiều dài của hình chữ nhật"><br>
+<button onclick="inputt()">calculate</button>
 <p id="dienTich"></p>
 <p id="chuVi"></p>
 </body>
 <script>
-    function input() {
+    function inputt() {
         let a = +document.getElementById("chieuRong").value;
         let b = +document.getElementById("chieuDai").value;
         let area = a * b;
