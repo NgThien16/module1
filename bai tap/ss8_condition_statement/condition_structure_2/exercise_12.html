@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12</title>
+</head>
+<body>
+<script>
+  let P = parseFloat(prompt("Nhập số tiền ban đầu (VND):"));
+  let r = parseFloat(prompt("Nhập lãi suất hàng tháng (%):"));
+  let n = parseInt(prompt("Nhập số tháng gửi:"));
+
+  f (isNaN(P) || isNaN(r) || isNaN(n)) {
+    alert("Vui lòng nhập đúng số.");
+  } else if (P <= 0 || r < 0 || n <= 0) {
+    alert("Số tiền, lãi suất và số tháng phải lớn hơn 0.");
+  } else {
+    r = r / 100; // chuyển lãi suất sang dạng thập phân
+
+    // Tính lãi kép trực tiếp bằng công thức
+    let T = P * Math.pow(1 + r, n);
+    let L = T - P;
+
+    alert("Tổng lãi sau " + n + " tháng là: " + L.toFixed(2) + " VND\n" +
+            "Tổng số tiền cuối kỳ: " + T.toFixed(2) + " VND");
+  }
+
+</script>
+</body>
+</html>
