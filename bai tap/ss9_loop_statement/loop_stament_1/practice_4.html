@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4</title>
+</head>
+<body>
+<script>
+
+    let a = 0, b = 1;
+    let result = "Dãy Fibonacci: " + a + ", " + b;
+
+    for (let i = 2; i < 100; i++) {
+        let next = a + b;
+        result += ", " + next;
+        a = b;
+        b = next;
+    }
+      document.write(result)
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>30 số Fibonacci đầu tiên chia hết cho 7</title>
+</head>
+<body>
+<script>
+  let a = 0, b = 1;
+  let count = 0;
+  let result = "30 số Fibonacci đầu tiên chia hết cho 7:<br>";
+
+  while (count < 30) {
+    let next = a + b;
+    if (next % 7 === 0) {
+      result += next + ", ";
+      count++;
+    }
+    a = b;
+    b = next;
+  }
+
+  document.write(result);
+</script>
+</body>
+</html>

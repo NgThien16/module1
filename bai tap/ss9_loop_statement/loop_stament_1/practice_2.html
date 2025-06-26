@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+</head>
+<body>
+<script>
+    let temperature = +prompt("Enter temperature in Celsius");
+    temperature = Number(temperature);
+
+    while (temperature > 100 || temperature < 20) {
+        if (temperature > 100) {
+            alert("Please up temperature")
+        } else if (temperature < 20) {
+            alert("Please down temperature")
+
+        }
+        temperature = +prompt("Nhập lại nhiệt độ hiện tại:");
+        temperature = Number(temperature);
+
+    }
+    alert("Temperature is ok")
+</script>
+
+</body>
+</html>
