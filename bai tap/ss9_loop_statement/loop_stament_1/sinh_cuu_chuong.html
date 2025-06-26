@@ -5,8 +5,21 @@
     <title>2</title>
 </head>
 <body>
+<h1>Bảng cửu chương</h1>
+<table id="bangCuuChuong"></table>
 <script>
-    for
+    let table = document.getElementById("bangCuuChuong");
+    for (let i = 1; i <= 9; i++) {
+        let row = document.createElement("tr");
+
+        for (let j = 2; j <= 9; j++) {
+            let oTrong = document.createElement("td");
+            let result = i * j;
+            oTrong.textContent = `${i} x ${j} = ${result}`;
+            row.appendChild(oTrong);
+        }
+        table.appendChild(row);
+    }
 </script>
 </body>
 </html>

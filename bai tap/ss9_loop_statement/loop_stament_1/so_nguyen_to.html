@@ -6,10 +6,25 @@
 </head>
 <body>
 <script>
-    let count=0;
-    for(let i=2; i<=20;i++){
+    let primeCount = 0;
+    let number = 2;
 
+    while (primeCount < 20) {
+        let flag = true;
 
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                flag = false;
+                break;
+            }
+        }
+
+        if (flag) {
+            document.write(number + "<br>");
+            primeCount++;
+        }
+
+        number++;
     }
 </script>
 </body>

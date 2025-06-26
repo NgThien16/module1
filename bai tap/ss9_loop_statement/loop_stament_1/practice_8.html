@@ -5,6 +5,30 @@
     <title>Ramdom</title>
 </head>
 <body>
-
+<button onclick="random()">Click</button>
+<script>
+ function random() {
+     let min= +prompt("nhập giá trị nhỏ nhất ");
+     let max= +prompt("nhập giá trị lớn nhất ");
+     //tạo ra 1 số ramdon(từ min-max)
+     //alert(Math.random());//sẽ tạo ra từ 0-1
+     let result = min+Math.round(Math.random()*(max-min));//Math.round là làm tròn.
+     let yourNumber;
+     for(let i=1;i<=3;i++){
+         yourNumber = +prompt("nhập số cần dự đoán");
+         if(yourNumber===result){
+             alert("Chúc mừng bạn đã đoán đúng");
+         }else if(yourNumber<result){
+             alert("Số bạn đoán nhỏ hơn");
+         }else{
+             alert("Số bạn đoán lớn hơn");
+         }
+         if (i===3){
+             alert("bạn đã hết lượt đoán")
+         }
+     }
+     alert(result);
+ }
+</script>
 </body>
 </html>
