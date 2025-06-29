@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage</title>
+</head>
+<body>
+<h1>Add New Product</h1><br>
+<input type="text" id="new" name="newproduct" value="new product">
+<button onclick="addProduct()" style="background-color:green; color:white">Add</button>
+<h1>Display All Products</h1>
+<button onclick="updateProduct()" style="background-color:orange; color:white">Update</button>
+<button onclick="deleteProduct()" style="background-color:red; color:white">Delete</button>
+<div id="prolist"></div>
+</body>
+<script>
+    let products =["Sony Xperia","Samsung Galaxy","Apple iPhone","Oppo F1s","LG V40","Huawei P30"];
+    function showProducts(){
+       let prolist = document.getElementById("prolist");
+       prolist.innerHTML = "";
+       for(let i=0;i<products.length;i++){
+       prolist.innerHTML += products[i] + "<br>";}
+    }
+    function addProduct(){
+        let product = document.getElementById("new").value;
+        if(product !== ""){
+            products.push(product);
+            showProducts();
+        }else{
+            alert("Please enter product name");
+        }
+    }
+    function updateProduct() {
+        let oldProduct = prompt("Enter product name to update");
+        let index = products.indexOf(oldProduct);
+        if (index !== -1) {
+            let newProduct = prompt("Enter new product name");
+            if (newProduct && newProduct.trim() !== "") {
+                products[index] = newProduct.trim();
+                showProducts();
+            } else {
+                alert("Invalid new product name.");
+            }
+        } else {
+            alert("Product not found!");
+        }
+    }
+
+    function deleteProduct() {
+        let product = prompt("Enter product name to delete");
+        let index = products.indexOf(product);
+        if (index !== -1) {
+            products.splice(index, 1);
+            showProducts();
+        } else {
+            alert("Product not found!");
+        }
+    }
+    showProducts();
+</script>
+</html>

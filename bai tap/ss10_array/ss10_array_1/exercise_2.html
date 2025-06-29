@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>max và vị trí</title>
+</head>
+<body>
+<script>
+  let soNguyen = [1, 5,9, 10, 16, 28, 35, 42, 50,58];
+  let max= soNguyen[0];
+  let viTri=0;
+  for(let i = 1; i < soNguyen.length; i++){
+    if(max<soNguyen[i]){
+      max=soNguyen[i];
+      viTri=i;
+    }
+  }
+  alert(`giá trị lớn nhất là:${max} và trị lớn nhất là ${viTri}`);
+</script>
+</body>
+</html>

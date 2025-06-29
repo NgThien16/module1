@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>max and average</title>
+</head>
+<body>
+<script>
+    let soNguyen = [1, 5,9, 10, 16, 28, 35, 42, 50,58];
+    let max= soNguyen[0];
+    let sum = 0;
+
+    for(let i = 1; i < soNguyen.length; i++){
+        sum+=soNguyen[i];
+        if(max<soNguyen[i]){
+            max=soNguyen[i];
+        }
+    }
+    alert(`giá trị lớn nhất là: ${max} `);
+    alert(`giá trị trung bình là: ${sum/soNguyen.length}`)
+</script>
+</body>
+</html>

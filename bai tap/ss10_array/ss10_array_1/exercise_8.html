@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sắp xếp mảng</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt("Nhập số thứ " + (i + 1));
+    }
+    arr.sort((a, b) => b - a);
+    alert("Mảng sau khi sắp xếp: " + arr);
+</script>
+</body>
+</html>
