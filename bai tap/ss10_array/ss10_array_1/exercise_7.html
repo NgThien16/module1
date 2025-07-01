@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Xóa v</title>
+    <meta charset="UTF-8">
+    <title>Xóa v</title>
 </head>
 <body>
 <script>
-  let soNguyen = [1, 5,9, 10, 16, 28, 35, 42, 50,58];
-  let v = +prompt("nhập số v");
-  for(let i = 0; i < soNguyen.length; i++){
-    if(soNguyen[i] === v){
-
-      soNguyen.splice(i,1);
-      soNguyen.push(0)
+    let soNguyen = [1, 5, 9, 10, 16, 28, 35, 42, 50, 58];
+    let v = +prompt("nhập số v");
+    for (let i = 0; i < soNguyen.length; i++) {
+        if (soNguyen[i] === v) {
+            for (let j = i; j < soNguyen.length; j++) {
+                soNguyen[j] = soNguyen[j + 1];
+            }
+            soNguyen[soNguyen.length - 1] = 0;
+            i--;
+            //soNguyen.splice(i,1);
+            //soNguyen.push(0);
+        }
     }
-
-  }
-  alert(`Mảng sau khi xóa V là ${soNguyen}`)
+    alert(`Mảng sau khi xóa V là ${soNguyen}`);
 </script>
 </body>
 </html>
+
+//splice(vị trí, số phần tử cần xóa)
+//splice(vị trí, 0"không xóa", số cần chèn)
+
+//sort() mặc định sắp xếp theo alphaB <=> number.sort(function(a,b)){return b-a}); a-b tăng dần, b-a giảm dần or number.sort((a,b)=>b-a)
+
+//inclue(): tìm trong chuỗi và trả về true or false
