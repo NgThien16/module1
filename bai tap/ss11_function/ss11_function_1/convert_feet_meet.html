@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let foot = +prompt("Nhập foot")
+    let meter = +prompt("Nhập meter")
+    function footToMeter(foot){
+        return 0.305 * foot
+    }
+
+    function meterToFoot(meter){
+        return 3.279 * meter
+    }
+
+    let resultText = `${foot}foots = ${footToMeter(foot).toFixed(2)} meters<br>
+                       ${meter} meters = ${meterToFoot(meter).toFixed(2)} foot`;
+
+    document.getElementById("result").innerHTML = resultText;
+</script>
+</body>
+</html>
