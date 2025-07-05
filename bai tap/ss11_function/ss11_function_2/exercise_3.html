@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Giai Thừa</title>
+</head>
+<body>
+<script>
+    let number=+prompt("Nhập số bất kỳ")
+    function tinhGiaiThua(n){
+        if (n < 0) return "Không có giai thừa cho số âm";
+        let result = 1;
+        for(let i=0;i<=n;i++){
+            result *=i;
+        }
+        return result;
+    }
+    alert(`Giai thừa của ${number} là ${tinhGiaiThua()}`)
+</script>
+</body>
+</html>

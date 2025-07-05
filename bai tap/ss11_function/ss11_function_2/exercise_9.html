@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bất kỳ</title>
+</head>
+<body>
+<script>
+
+    function checkArray(){
+        let arr = [];
+        for (let i = 0; i <5; i++) {
+            arr[i] = +prompt("Nhập số thứ " + (i + 1));
+            }
+        let kyTu = +prompt('Nhập ký tự bất kì');
+        let dem=0;
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]===kyTu){
+                dem++;
+            }
+        }
+      alert(`Ký tự${kyTu} xuất hiện ${dem} lần`)
+    }
+    checkArray()
+</script>
+</body>
+</html>
