@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+<script>
+    class Rectangle{
+        length;
+        width;
+        constructor(length,width){
+            this.length = length;
+            this.width = width;
+        }
+        tinhDienTich(){
+            let result = this.length * this.width
+            alert(`Dien tich la ${result}`)
+        }tinhChuVi(){
+           let result= (this.length + this.width)*2;
+            alert(`chu vi la ${result}`)
+        }
+    }
+      let calculate =new Rectangle(20,30)
+      calculate.tinhDienTich()
+      calculate.tinhChuVi()
+</script>
+</body>
+</html>

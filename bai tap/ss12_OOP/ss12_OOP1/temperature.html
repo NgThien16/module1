@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+  <script>
+      class Temperature{
+          celsius;
+          min;
+          constructor(celsius,min){
+              this.celsius = celsius;
+              this.min = min;
+          }
+          convert(){
+              alert(`Độ F là: ${(this.celsius*1.8)+32}`);
+              alert(`Độ K là: ${273.15*this.celsius}`);
+          }
+      }
+      let temperature = new Temperature(25,-273)
+       temperature.convert();
+  </script>
+</body>
+</html>
