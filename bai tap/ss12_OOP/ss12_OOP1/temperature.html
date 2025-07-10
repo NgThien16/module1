@@ -5,21 +5,30 @@
     <title>Temperature</title>
 </head>
 <body>
-  <script>
-      class Temperature{
-          celsius;
-          min;
-          constructor(celsius,min){
-              this.celsius = celsius;
-              this.min = min;
-          }
-          convert(){
-              alert(`Độ F là: ${(this.celsius*1.8)+32}`);
-              alert(`Độ K là: ${273.15*this.celsius}`);
-          }
-      }
-      let temperature = new Temperature(25,-273)
-       temperature.convert();
-  </script>
+<script>
+    class Temperature {
+        celsius;
+        min;
+
+        constructor(celsius, min) {
+            this.celsius = celsius;
+            this.min = min;
+        }
+
+        toFahrenheit() {
+            let fahrenheit = (this.celsius * 1.8) + 32;
+            alert(`Độ F là: ${fahrenheit}`);
+        }
+
+        toKelvin() {
+            let kelvin = this.celsius + 273.15;
+            alert(`Độ K là: ${kelvin}`);
+        }
+    }
+
+    let temperature = new Temperature(25, -273);
+    temperature.toFahrenheit();
+    temperature.toKelvin();
+</script>
 </body>
 </html>

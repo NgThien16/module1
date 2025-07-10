@@ -6,24 +6,55 @@
 </head>
 <body>
 <script>
-    class Rectangle{
+    class Rectangle {
         length;
         width;
-        constructor(length,width){
+
+        constructor(length, width) {
             this.length = length;
             this.width = width;
         }
-        tinhDienTich(){
-            let result = this.length * this.width
-            alert(`Dien tich la ${result}`)
-        }tinhChuVi(){
-           let result= (this.length + this.width)*2;
-            alert(`chu vi la ${result}`)
+
+        // Phương thức getter và setter cho chiều dài
+        setLength(length) {
+            this.length = length;
+        }
+
+        getLength() {
+            return this.length;
+        }
+
+        // Phương thức getter và setter cho chiều rộng
+        setWidth(width) {
+            this.width = width;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+
+        tinhDienTich() {
+            let result = this.length * this.width;
+            alert(`Diện tích là ${result}`);
+        }
+
+        tinhChuVi() {
+            let result = (this.length + this.width) * 2;
+            alert(`Chu vi là ${result}`);
         }
     }
-      let calculate =new Rectangle(20,30)
-      calculate.tinhDienTich()
-      calculate.tinhChuVi()
+
+    let calculate = new Rectangle(20, 30);
+    calculate.tinhDienTich();
+    calculate.tinhChuVi();
+
+    // Thử dùng setter và getter
+    calculate.setLength(40);
+    calculate.setWidth(50);
+    alert(`Chiều dài mới: ${calculate.getLength()}`);
+    alert(`Chiều rộng mới: ${calculate.getWidth()}`);
+    calculate.tinhDienTich();
+    calculate.tinhChuVi();
 </script>
 </body>
 </html>
