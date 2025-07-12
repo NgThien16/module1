@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+</head>
+<body>
+  <script>
+
+
+
+    function soNguyenTo(number){
+      if (number<2)return false;
+      for(let i=2;i<=Math.sqrt(number); i++){
+
+        if(number%i===0){
+          return false;
+        }
+      }
+      return true;
+    }
+    function check(arr){
+      return arr.every(soNguyenTo);
+
+    }
+    alert(check([4,6,8,12]))
+    alert(check([2,3,5,7,]))
+  </script>
+</body>
+</html>
