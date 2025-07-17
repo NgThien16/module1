@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function find(x) {
+        //check phân số
+        let arr = x.split("/");
+        if (arr.length === 2) {
+            alert('có thể là 1 phân số');
+            if(!isNaN(arr[0])&&!isNaN(arr[1])&&array[1]!=0){
+                alert('là phân số')
+                let uocChungLonNhat = timUCLN(arr[0],arr[1]);
+                if (array[0]%array[1]==0){
+                    alert("kết quả rut gọn là một số: " +array[0]/array[1])
+                }else {
+                    alert("phân số tối giản :" + array[0] / uocChungLonNhat + "/" + array[1] / uocChungLonNhat);
+
+                }else{
+                alert('không phải là phân số')}
+            }
+        } else {
+            alert('không phải là 1 phân số')
+        }
+    }
+    function timUCLN(a,b){
+        let uocChung=1;
+        if(a<b){
+            for(let i=0; i<=a;i++){
+                if(a%i===0&&b%i===0){
+                    uocChung=i;
+                }
+            }
+        }else{
+            for(let i=0; i<=b;i++){
+                if(a%i===0&&b%i===0){
+                    uocChung=i;
+                }
+        }
+    }
+    find('123/');
+    find('12/a11');
+    find(1/0);
+    find(0/1);
+    find(1/2);
+    find(2/4);
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n;
+  do{
+    n= +prompt("nhập độ dài của mảng lưu ý nhập chẵn")
+  }while(n<=0||n>20||n%2!==0)
+  let array= new Array(n);
+  for(i=0; i<array.length;i++){
+    array[i]=+prompt('Nhập phần tử thứ' +(i+1));
+  }
+  alert('Mảng sau khi nhập là' + array)
+  let check=true;
+  for(i=0; i<array.length;i++) {
+    if (array[i] > array[i + 1]) {
+      alert('NO')
+      check= false;
+      break
+    }
+  }
+    if(check){
+      alert('OK')
+  }else{
+      alert('NO')
+    }
+</script>
+</body>
+</html>

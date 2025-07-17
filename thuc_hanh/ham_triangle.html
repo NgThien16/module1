@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tam giác</title>
+</head>
+<body>
+<script>
+    let x = +prompt("Nhập cạnh x");
+    let y = +prompt("Nhập cạnh y");
+    let z = +prompt("Nhập cạnh z");
+
+    checkTriangle(x, y, z);
+
+    function checkTriangle(x, y, z) {
+        if ((x + y) <= z || (y + z) <= x || (x + z) <= y) {
+            alert('Không phải là cạnh tam giác');
+        } else if (squareTriangle(x, y, z)) {
+            alert('Tam giác vuông');
+        } else {
+            alert('Chỉ là tam giác bình thường');
+        }
+    }
+
+    function squareTriangle(x, y, z) {
+        let sides = [x, y, z].sort((a, b) => a - b);
+        let [a, b, c] = sides;
+        return Math.abs(a ** 2 + b ** 2 - c ** 2) < 1e-9;
+    }
+</script>
+</body>
+</html>
