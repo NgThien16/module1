@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let array=[1,5,6,11,9,20,8,0,8,1]
+  alert(mang2Chieu(array))
+  function mang2Chieu(arr){
+    let result=[]
+    for(let i=0;i<= arr.length; i++){
+      if(arr[i]+arr[i+1]===arr[i+2]) {
+        result = [arr[i], arr[i + 1]]
+      }
+    }
+    alert(result)
+  }
+</script>
+</body>
+</html>
