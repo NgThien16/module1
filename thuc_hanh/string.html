@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string</title>
+</head>
+<body>
+<script>
+    function check(str){
+        let character =[]
+        for (let i=0; i<str.length; i++){
+            if (char==="u" || char==="e" || char==="o" || char==="a" || char==="i" || char==="U" || char==="E" || char==="O" || char==="A" || char==="I"){
+                newChar += character;
+            }
+        }
+        let newArr=[]
+        check = true
+        for (let i=0;i<str.length;i++){
+            for (let j=0;j<i;j++){
+                if (newChar[i]===newChar[j]){
+                 let check= false
+                 break
+                }
+            }
+            if(check){
+                newArr +=newChar[i];
+
+            }
+        }return newArr;
+    }
+</script>
+</body>
+</html>
