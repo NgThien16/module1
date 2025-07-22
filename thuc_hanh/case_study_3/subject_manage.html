@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subject Management</title>
+</head>
+<body>
+<h1>Subject</h1>
+<div id="display"></div>
+<script>
+  class Subject{
+    constructor(id, name, credit){
+      this.id =id;
+      this.name =name;
+      this.credit =credit;
+    }
+  }
+  let subjectList=[
+    new Subject('Mat','Math',5 ),
+    new Subject('Eng','English',5 ),
+    new Subject('Phy','Physical',2 )
+  ];
+  function showList(list){
+    let tableString = `<table border="1" style="border-collapse: collapse">
+                          <tr>
+                            <th>No</th>
+                            <th>Subject ID</th>
+                            <th>Name</th>
+                            <th>Credit</th>
+                            <th>Delete</th>
+                          </tr>`;
+
+    for (let i=0; i<list.length;i++){
+      tableString+= `<tr>
+                          <td>${i + 1}</td>
+                          <td>${list[i].id}</td>
+                          <td>${list[i].name}</td>
+                          <td>${list[i].credit}</td>
+                          <td><button onclick="deleteSubject(${i})">Delete</button></td>
+                        </tr>`;
+    }
+    tableString += `</table>`;
+    document.getElementById("display").innerHTML = tableString;
+  }
+  function deleteSubject(index){
+    let config=confirm('Do you want to delete subject')
+    if(conf){
+      subjectList.splice(index,1);
+      showList(subjectList)
+
+    }
+  }
+  showList(subjectList);
+</script>
+</body>
+</html>

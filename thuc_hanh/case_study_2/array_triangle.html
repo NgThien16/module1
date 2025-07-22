@@ -17,9 +17,8 @@
       array[i] = +prompt('Nhập phần tử thứ ' + (i + 1))
     }
     alert("Mảng sau khi nhập là"+array) // hiển danh sách của mảng
-
+   let valid = true;
     for (let i = 0; i < array.length; i+=3) {
-        let valid = true;
         if (!squareTriangle(array[i], array[i + 1], array[i + 2])) {
             valid = false;
             break
