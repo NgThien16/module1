@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+</head>
+<body>
+<script>
+    function classes(str){
+        if(!str.includes(' ')){
+            alert(' CHỉ có 1 từ')
+        }
+
+        let ketQua='';
+        let chuDau=true;
+        for(let i=0; i<=str.length; i++){
+            if(str[i]!==" "&&chuDau){
+                ketQua += str[i].toUpperCase();
+                chuDau=false;
+            }
+            if(str[i]===" "){
+                chuDau= true
+            }
+        }
+        alert(ketQua)
+    }
+    let n= prompt('Nhâpj từ')
+    classes(n)
+</script>
+</body>
+</html>

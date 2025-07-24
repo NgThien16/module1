@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Management</title>
+</head>
+<body>
+<div>
+    <h2>Phone Products</h2>
+    <input id="id" placeholder="Enter id">
+    <input id="name" placeholder="Enter name">
+    <input id="brand" placeholder="Enter brand">
+    <input id="price" placeholder="Enter price">
+    <button onclick="addNewProduct()">Add New Product</button>
+    <div id="display"></div>
+</div>
+
+<script>
+    class Product {
+        constructor(id, name, brand, price) {
+
+            this.id = id;
+            this.name = name;
+            this.price = price;
+            this.brand = brand;
+        }
+    }
+
+
+    let productList = [
+        new Product(1, "Samsung A05s","Samsung", 100),
+        new Product(2, "iPhone 14 promax","Apple", 200),
+        new Product(3, "Nokia 5060","Nokia", 150)
+    ];
+
+    function showList(list) {
+        let tableString = `<table border="1" style="border-collapse: collapse">
+                          <tr>
+                            <th>No</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Brand</th>
+                            <th>Price</th>
+
+                          </tr>`;
+        for (let i = 0; i < list.length; i++) {
+            tableString += `<tr>
+                          <td>${i + 1}</td>
+                          <td>${list[i].id}</td>
+                          <td>${list[i].name}</td>
+                          <td>${list[i].brand}</td>
+                          <td>${list[i].price}</td>
+
+                        </tr>`;
+        }
+        tableString += `</table>`;
+        document.getElementById("display").innerHTML = tableString;
+
+    }
+
+    function addNewProduct() {
+        let id = document.getElementById("id").value.trim();
+        let name = document.getElementById("name").value.trim();
+        let brand = document.getElementById("brand").value.trim();
+        let price = document.getElementById("price").value.trim();
+
+        if (id === "" || name === "" || brand ===""||price === "") {
+            alert("Please fill in all fields!");
+            return;
+        }
+
+        const newProduct = new Product(id, name,brand, parseFloat(price));
+        productList.push(newProduct);
+
+
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("brand").value = "";
+        document.getElementById("price").value = "";
+
+        showList(productList);
+    }
+    showList(productList);
+</script>
+</body>
+</html>

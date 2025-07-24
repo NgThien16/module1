@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check</title>
+</head>
+<body>
+<script>
+
+    let n;
+    do{
+        n= +prompt(' Nhập số tổng số điểm trung bình');
+    }while(n%4!==0||n>=20)
+    let array= new Array(n);
+    for(i=0; i<array.length; i++){
+        array[i]= +prompt("Nhập số điểm trung bình của từng người "+(i+1))
+    }
+    alert('Điểm của 4 người là'+array)
+    let check=true;
+    for(let i=0; i<array.length-4; i+=4){
+        if(!checkTB(a[i],a[i+1],a[i+2],a[i+3])){
+            check = false
+            break
+
+        }
+
+    }if(check){
+        alert("Pass")
+    }else{
+        alert("Fail")
+    }
+    function checkTB(a,b,c,d){
+        return ((a+b+c+d)/4)>=5.0;
+    }
+
+</script>
+</body>
+</html>

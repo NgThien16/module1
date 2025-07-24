@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 3 - Tìm cặp thời gian học gần nhất</title>
+</head>
+<body>
+<script>
+  // B1: Nhập dữ liệu
+  let n = +prompt("Nhập số phần tử của mảng:");
+  let arr = [];
+
+  for (let i = 0; i < n; i++) {
+    arr[i] = +prompt("Nhập phần tử thứ " + (i + 1));
+  }
+
+  alert("Mảng bạn vừa nhập: " + arr.join(", "));
+
+  // B2: Tìm hiệu nhỏ nhất giữa các cặp liên tiếp
+  let minDiff = Math.abs(arr[1] - arr[0]);
+  let result = [[arr[0], arr[1]]];
+
+  for (let i = 1; i < arr.length - 1; i++) {
+    let diff = Math.abs(arr[i + 1] - arr[i]);
+    if (diff < minDiff) {
+      minDiff = diff;
+      result = [[arr[i], arr[i + 1]]]; // reset danh sách cặp
+    } else if (diff === minDiff) {
+      result.push([arr[i], arr[i + 1]]); // thêm cặp mới
+    }
+  }
+
+  // B3: Hiển thị kết quả
+  alert("Các cặp có hiệu nhỏ nhất là: " + JSON.stringify(result));
+</script>
+</body>
+</html>
